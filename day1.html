@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>મહંત સ્વામી મહારાજ પ્રસંગો - ગેલેરી અને ફ્લેશકાર્ડ્સ</title>
+  <style>
+    :root {
+      --primary: #d9531e;
+      --primary-dark: #b83e10;
+      --primary-light: #fff3ec;
+      --gold: #f59e0b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-hover: 0 14px 28px -4px rgba(217, 83, 30, 0.15), 0 6px 10px -2px rgba(0,0,0,0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Shruti", "Gujarati Sangam MN", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #d9531e 0%, #b83e10 100%);
+      color: #fff;
+      padding: 2.2rem 1.2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(217, 83, 30, 0.25);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      font-size: 1.05rem;
+      opacity: 0.95;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 1.4rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 22px;
+      border-radius: 9999px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-white {
+      background-color: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .btn-white:hover {
+      background-color: #f1f5f9;
+      transform: translateY(-1px);
+    }
+
+    .tab-bar {
+      max-width: 1240px;
+      margin: 1.8rem auto 0;
+      padding: 0 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .tab-btn {
+      padding: 11px 26px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(217, 83, 30, 0.25);
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 1.5rem auto;
+      padding: 0 1.2rem;
+    }
+
+    .controls {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 1rem 1.4rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 260px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(217, 83, 30, 0.15);
+    }
+
+    .stat-badge {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* GALLERY VIEW */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .prasang-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .prasang-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      border-color: rgba(217, 83, 30, 0.3);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.9rem;
+      gap: 8px;
+    }
+
+    .pill-location {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pill-date {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .card-story {
+      font-size: 1rem;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+      line-height: 1.65;
+    }
+
+    .card-footer {
+      border-top: 1px dashed var(--border);
+      padding-top: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 0.88rem;
+    }
+
+    .card-meta-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .card-meta-label {
+      color: var(--text-muted);
+      font-weight: 600;
+      min-width: 95px;
+    }
+
+    .card-meta-val {
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .card-meta-val.guna {
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    /* FLASHCARD VIEW */
+    .flashcard-section {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .flashcard-section.active {
+      display: flex;
+    }
+
+    .fc-progress-wrap {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .fc-progress-bar {
+      height: 8px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .fc-progress-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 4%;
+      transition: width 0.3s ease;
+    }
+
+    .fc-perspective {
+      perspective: 1200px;
+      width: 100%;
+      height: 380px;
+      cursor: pointer;
+    }
+
+    .fc-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border-radius: 20px;
+    }
+
+    .fc-inner.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .fc-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      padding: 2.2rem 2.2rem;
+      background: #ffffff;
+      border: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+
+    .fc-front { background: #ffffff; }
+
+    .fc-back {
+      background: #fffaf7;
+      border-color: rgba(217, 83, 30, 0.35);
+      transform: rotateY(180deg);
+    }
+
+    .fc-prompt-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .fc-click-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: normal;
+    }
+
+    .fc-story-text {
+      font-size: 1.18rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      margin: auto 0;
+      text-align: center;
+    }
+
+    .fc-back-detail {
+      margin: auto 0;
+      width: 100%;
+    }
+
+    .fc-back-item {
+      margin-bottom: 1.2rem;
+      background: #ffffff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #fee2e2;
+    }
+
+    .fc-back-item:last-child { margin-bottom: 0; }
+
+    .fc-back-item h4 {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .fc-back-item p {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .fc-controls {
+      display: flex;
+      gap: 16px;
+      margin-top: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .fc-btn {
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s;
+    }
+
+    .fc-btn:hover {
+      background: #f8fafc;
+      border-color: var(--primary);
+    }
+
+    .fc-btn.primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .fc-btn.primary:hover {
+      background: var(--primary-dark);
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .fc-perspective { height: 430px; }
+      .fc-story-text { font-size: 1.05rem; }
+      header h1 { font-size: 1.55rem; }
+      .fc-face { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>મહંત સ્વામી મહારાજ પ્રસંગો અને સત્સંગ વિચરણા</h1>
+    <p>પ્રેરક જીવન પ્રસંગો, દાસભાવ, સહનશીલતા અને દિવ્ય ગુણોનું સંકલન</p>
+    
+    <div class="top-actions">
+      <button class="btn btn-white" onclick="downloadCurrentHtml()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download HTML File
+      </button>
+    </div>
+  </header>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" id="tabGalleryBtn" onclick="switchView('gallery')">
+      🖼️ ગેલેરી વ્યુ (Gallery)
+    </button>
+    <button class="tab-btn" id="tabFlashcardBtn" onclick="switchView('flashcards')">
+      🎴 ફ્લેશકાર્ડ્સ ક્વિઝ (Flashcards)
+    </button>
+  </div>
+
+  <main class="container">
+    <!-- Gallery Section -->
+    <section id="gallerySection">
+      <div class="controls">
+        <input type="text" id="searchInput" class="search-input" placeholder="પ્રસંગ, સ્થળ અથવા ગુણ શોધો..." oninput="handleSearch()">
+        <div class="stat-badge" id="cardCountBadge">કુલ ૨૫ પ્રસંગો દર્શાવેલ છે</div>
+      </div>
+      <div class="gallery-grid" id="galleryContainer"></div>
+    </section>
+
+    <!-- Flashcard Section -->
+    <section id="flashcardSection" class="flashcard-section">
+      <div class="fc-progress-wrap">
+        <span id="fcCounter" style="font-weight: 700; color: var(--text-muted);">કાર્ડ 1 / 25</span>
+        <div class="fc-progress-bar">
+          <div class="fc-progress-fill" id="fcProgressFill"></div>
+        </div>
+      </div>
+
+      <div class="fc-perspective" onclick="flipCard()">
+        <div class="fc-inner" id="fcCardInner">
+          <!-- Front Face -->
+          <div class="fc-face fc-front">
+            <div class="fc-prompt-tag">
+              <span id="fcLocationPill">સારંગપુર</span>
+              <span class="fc-click-hint">ક્લિક કરીને ગુણ જાણો ↻</span>
+            </div>
+            <div class="fc-story-text" id="fcFrontStory">
+              પ્રસંગ વિગતો લોડ થઈ રહી છે...
+            </div>
+            <div style="text-align: center; color: var(--text-muted); font-size: 0.85rem;" id="fcFrontDate">
+              તારીખ / વર્ષ
+            </div>
+          </div>
+
+          <!-- Back Face -->
+          <div class="fc-face fc-back">
+            <div class="fc-prompt-tag">
+              <span>જવાબ અને ગુણ દર્શન</span>
+              <span class="fc-click-hint">પાછા ફરવા ક્લિક કરો ↺</span>
+            </div>
+            <div class="fc-back-detail">
+              <div class="fc-back-item">
+                <h4>સ્વામીશ્રીનો ગુણ અથવા કાર્ય</h4>
+                <p id="fcBackGuna">અપાર સહનશીલતા</p>
+              </div>
+              <div class="fc-back-item">
+                <h4>સંકળાયેલ વ્યક્તિ અથવા હરિભક્ત</h4>
+                <p id="fcBackPerson" style="color: #475569; font-size: 1rem;">હરિભક્તો</p>
+              </div>
+            </div>
+            <div style="text-align: right; color: var(--primary); font-size: 0.82rem; font-weight: 600;" id="fcBackLoc">
+              સ્થળ
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="fc-controls">
+        <button class="fc-btn" onclick="prevCard()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          પાછળ (Previous)
+        </button>
+        <button class="fc-btn" onclick="flipCard()">
+          ઉલટાવો (Flip Card)
+        </button>
+        <button class="fc-btn primary" onclick="nextCard()">
+          આગળ (Next)
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <button class="fc-btn" onclick="shuffleCards()" title="રેન્ડમ ક્રમ">
+          🎲 શફલ (Shuffle)
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const prasangData = [
+      {
+        id: 1,
+        date: "12/7/2022 (ગણતરી મુજબ)",
+        location: "સારંગપુર",
+        story: "મુલાકાત દરમિયાન સ્વામીશ્રીનો ડાબા હાથનો અંગૂઠો ઝકડાઈ ગયો અને તકલીફ થવા લાગી છતાં સંતોની ના છતાં મુલાકાત ચાલુ રખાવી અને જમણા હાથથી અંગૂઠો પકડીને બધાને આશીર્વાદ આપ્યા.",
+        person: "મુલાકાતે આવેલા હરિભક્તો",
+        guna: "અપાર સહનશીલતા, હરિભક્તો પ્રત્યે અનહદ પ્રેમ"
+      },
+      {
+        id: 2,
+        date: "98મી જન્મજયંતી પ્રસંગે",
+        location: "રાજકોટ",
+        story: "નગર નિરીક્ષણ દરમિયાન સ્વામીશ્રીએ એક નાના બાળકના હાથમાં ફૂલ જોયા અને તેને બોલાવવા ગાડીનો કાચ બંધ થતો હતો છતાં હાથ બહાર રાખી મોટું રિસ્ક લઈને બાળક પાસેથી પ્રેમથી ફૂલનો ભાવ સ્વીકાર્યો.",
+        person: "નાનું બાળક",
+        guna: "બાળકો પ્રત્યે વાત્સલ્ય અને નિર્દોષ ભાવનો સ્વીકાર"
+      },
+      {
+        id: 3,
+        date: "2023",
+        location: "રોબિન્સવિલ",
+        story: "સંતોએ ગાડીનો સમય બચાવવા માટે ટ્રાન્સપોર્ટ ટાઈમ કટ કરવાની વાત કરી ત્યારે સ્વામીશ્રીએ અણગમો બતાવી કહ્યું કે આ રસ્તામાં મને બધા હરિભક્તોના દર્શન થાય છે એટલે સમય કટ નથી કરવો.",
+        person: "સેવક સંતો અને હરિભક્તો",
+        guna: "હરિભક્તોના દર્શનનો મહિમા અને પ્રેમ"
+      },
+      {
+        id: 4,
+        date: "2018",
+        location: "સિંગાપુર",
+        story: "એક બાળક દોડતો આવીને ભેટ્યો, ત્યારબાદ સ્વામીશ્રી ચાલતા ચાલતા સાત-આઠ નાના બાળકોને સહજતાથી ભેટ્યા અને બાળકો સાથે બાળ જેવા થઈને ચોકલેટ જમાડી આનંદ આપ્યો.",
+        person: "નાના બાળકો",
+        guna: "બાળ સ્નેહ, નિરાભિમાનતા અને સહજતા"
+      },
+      {
+        id: 5,
+        date: "2018 / 2019",
+        location: "મુંબઈ",
+        story: "નાટક કરનાર એક યુવકના ગાલ પરથી મેકઅપનો કાળો પંજો જાતે સાફ કર્યો અને 'અક્ષરધામ લઈ જઈશ' તેવું વચન આપ્યું. એક વર્ષ પછી મુંબઈ આવ્યા ત્યારે તેને યાદ રાખીને એ જ ગાલ પર હાથ મૂકી સ્મૃતિ તાજી કરી.",
+        person: "નાટકમાં ભાગ લેનાર યુવક/હરિભક્ત",
+        guna: "તીક્ષ્ણ સ્મૃતિશક્તિ અને હરિભક્ત પ્રત્યે આત્મીયતા"
+      },
+      {
+        id: 6,
+        date: "2024 (મૂર્તિ પ્રતિષ્ઠા દિન)",
+        location: "અબુધાબી",
+        story: "વિશ્વસ્તરીય મોટો ઉત્સવ અને વડાપ્રધાન મોદીજી વગેરેની હાજરી હોવા છતાં, સ્વામીશ્રીએ કોઈ પણ માનસિક બોજ વગર ગેરહાજર કાર્યકરોને યાદ કરીને પત્ર લખ્યો કે 'મારું મન તમારામાં છે'.",
+        person: "બીએપીએસ કાર્યકર્તાઓ",
+        guna: "કાર્યકરો પ્રત્યે અહર્નિશ સંભાળ અને સ્થિતપ્રજ્ઞતા"
+      },
+      {
+        id: 7,
+        date: "કોરોના કાળ",
+        location: "દારેસલામ / ભારત",
+        story: "દારેસલામના સુભાષભાઈ ધામમાં ગયા ત્યારે રૂબરૂ જઈ શકાય તેમ ન હોવાથી ચંદનનું લાકડું, ભગવું વસ્ત્ર, પ્રસાદી જળ મોકલી અંતિમ વિધિ કરાવી અને સ્ક્રીન પર લાઈવ પ્રસારણ જોઈ પોતે પ્રદક્ષિણા ફરી.",
+        person: "સુભાષભાઈ (દારેસલામ)",
+        guna: "હરિભક્ત પ્રત્યે પરમ આત્મીયતા અને મોક્ષદાતા ભાવ"
+      },
+      {
+        id: 8,
+        date: "2023",
+        location: "લંડન પ્રવાસ (પ્લેનમાં)",
+        story: "90 વર્ષની મોટી ઉંમરે વિમાન મુસાફરી અનુકૂળ ન આવતી હોવા છતાં સ્વામીશ્રીએ કહ્યું કે 'મને અનુકૂળ નથી આવતું પણ હરિભક્તો રાજી થાય છે એટલે ટ્રાવેલિંગ કરવું ગમે છે'.",
+        person: "પરદેશના હરિભક્તો",
+        guna: "દેહભાવથી પર રહી હરિભક્તોને સુખ આપવાનો મહિમા"
+      },
+      {
+        id: 9,
+        date: "2017",
+        location: "ચિત્રોડી / દાવળ / હિંમતનગર",
+        story: "ખરાબ રસ્તેથી પસાર થતાં હરિભક્તના વિનંતીથી ચિત્રોડી ગામે ગાડી રોકી, પોતે પટ્ટો ખોલી નીચે ઉતરીને દર્શન-આર કર્યા અને દાવળ ગામે અંધારામાં પણ ઊભા રહી ભક્તોને રાજી કર્યા.",
+        person: "ચિત્રોડી અને દાવળના હરિભક્તો",
+        guna: "હરિભક્તોની ઈચ્છા પૂર્ણ કરવાની તત્પરતા"
+      },
+      {
+        id: 10,
+        date: "2019",
+        location: "નાયરોબી",
+        story: "દિવ્યમ શિબિર (2019) પછી સંતે સ્વામીશ્રીને કહ્યું કે આપ અમને રાજી કરો છો, ત્યારે સ્વામીશ્રીએ કહ્યું કે મારો અવતાર જ બધાને રાજી કરવા માટે થયો છે. બીમારીમાં પણ તેઓ રાજીપાનો ઝંડો લઈને ફરે છે.",
+        person: "સંતો અને હરિભક્તો",
+        guna: "પરમ દયાળુતા, હરિભક્તોને રાજી કરવાનો અખંડ ભાવ અને આત્મનિષ્ઠા"
+      },
+      {
+        id: 11,
+        date: "2016",
+        location: "સત્સંગ વિચરણા",
+        story: "પગના ઓપરેશનને કારણે વ્હીલચેર પર બેઠેલા શિષ્ય સાથે ખાનગી વાતચીત પૂરી થયા પછી સ્વામીશ્રી પોતે ઊભા થઈને બે દરવાજા બહાર સુધી તેને મૂકવા ગયા.",
+        person: "વ્હીલચેર પર રહેલ શિષ્ય/હરિભક્ત",
+        guna: "નમ્રતા, દાસભાવ અને ભક્તસેવા"
+      },
+      {
+        id: 12,
+        date: "વિચરણા સ્મૃતિ",
+        location: "સારંગપુર",
+        story: "યજ્ઞપુરુષ આશ્રમમાં દંડવત કરીને ઊભા થયેલા લંડનના ભાવિનભાઈ વગેરે હરિભક્તોના પેન્ટ પર ચોંટેલી રેતી સ્વામીશ્રીએ પોતે નીચે નમીને પોતાના હાથે સાફ કરી આપી.",
+        person: "ભાવિનભાઈ અને લંડનના હરિભક્તો",
+        guna: "હરિભક્તોના નાનામાં નાના સુખ-સગવડની કાળજી"
+      },
+      {
+        id: 13,
+        date: "વિચરણા સ્મૃતિ",
+        location: "મુંબઈ",
+        story: "દરરોજ પૂજા દર્શનમાં થાંભલા પાસે ઊભા રહેતા હરિભક્ત નાઈટ શૂટિંગના લીધે એક દિવસ ન આવ્યા, તો સ્વામીશ્રીએ સામેથી સંતોને પૂછ્યું કે 'આ ક્યાં છે?' અને સવારે 6 વાગે તેને ફોન કરીને યાદ કર્યા.",
+        person: "એક હરિભક્ત (શૂટિંગ વાળા)",
+        guna: "દરેક ભક્ત પ્રત્યે સૂક્ષ્મ ધ્યાન અને વ્યક્તિગત પ્રેમ"
+      },
+      {
+        id: 14,
+        date: "વિચરણા સ્મૃતિ",
+        location: "જોધપુર / રોબિન્સવિલ / સુરત",
+        story: "જોધપુરના કારીગરોને 'મુક્ત' કહી પત્ર લખ્યો, તેમને બોલાવી સન્માન કર્યું અને કાંટાવાળી દાંડી તોડીને મસ્તક પર ગુલાબ મૂક્યું. સુરતમાં કારીગરોની આરતી ઉતરાવી.",
+        person: "મંદિર નિર્માણના કારીગર ભાઈઓ",
+        guna: "શ્રમજીવીઓ પ્રત્યે સમભાવ, માન-આદર અને ભગવદ્ભાવ"
+      },
+      {
+        id: 15,
+        date: "વિચરણા સ્મૃતિ",
+        location: "હિંમતનગર / બોડેલી",
+        story: "આદિવાસી હરિભક્તોના ઘરે જઈને ખાટલા (પલંગ) પર બેક સપોર્ટ વગર અડધો કલાક બેસીને મુલાકાત આપી, ચાંડલા કર્યા અને માર્ગદર્શન આપ્યું.",
+        person: "આદિવાસી હરિભક્તો",
+        guna: "ગરીબ-અમીરનો ભેદભાવ રહિત સમભાવ, તિતિક્ષા"
+      },
+      {
+        id: 16,
+        date: "10મી મે",
+        location: "વિચરણા સ્મૃતિ",
+        story: "મોટી ઉંમરે આંગળીઓ કોમળ હોવા છતાં સતત પત્રલેખન કરે છે. પ્રાપ્તિના વિચાર પર 12 પેજનો પત્ર (15 દિવસ ચાલ્યો), રાજીપાનો વિચાર, અભાવ-અવગુણ ન લેવો અને અક્ષર-પુરુષોત્તમ સિદ્ધાંત પર પત્રો લખ્યા.",
+        person: "બાળકો, યુવાનો, વૃદ્ધો અને કાર્યકરો",
+        guna: "સત્સંગ દ્રઢ કરાવવાની સતત તટસ્થતા અને પત્રલેખનનો પરિશ્રમ"
+      },
+      {
+        id: 17,
+        date: "વિચરણા સ્મૃતિ",
+        location: "સુરત",
+        story: "હિંમતનગરના આદિવાસી ભાઈઓના સમૂહ લગ્ન માટે તેઓને સુરત બોલાવ્યા, આખો દિવસ ફાળવ્યો, પૂજામાં તેમના ગીતો-નૃત્ય વાગોળ્યા અને શ્રીફળ, પલંગ, તિજોરી, વાસણો તથા પંખા સહિતની તમામ ગૃહસ્થી વસ્તુઓ પ્રસાદીની કરી આપી.",
+        person: "આદિવાસી નવદંપતીઓ / હરિભક્તો",
+        guna: "નિમ્ન વર્ગના ભક્તો માટે અસીમ ઉદારતા અને વિગતવાર કાળજી"
+      },
+      {
+        id: 18,
+        date: "વિચરણા સ્મૃતિ",
+        location: "નેનપુર",
+        story: "વરસાદ ન પડતા દેશકાળ સારા ન હતા ત્યારે સ્વામીશ્રીએ સળંગ ત્રણ દિવસ રાત્રે જાગીને 45 મિનિટથી એક કલાક સુધી હરિભક્તોના રક્ષણ માટે એકાગ્ર થઈને માળા ફેરવી પ્રાર્થના કરી.",
+        person: "સમગ્ર હરિભક્ત સમાજ",
+        guna: "હરિભક્તોના દુઃખ હરવા માટે પ્રાર્થના અને પરદુઃખભંજકતા"
+      },
+      {
+        id: 19,
+        date: "વિચરણા સ્મૃતિ",
+        location: "ભરૂચથી અટલાદરા રસ્તે",
+        story: "ઝડપથી જતી ગાડીમાં રસ્તા પર હાર લઈને ઊભેલા હરિભક્ત પર સ્વામીશ્રીની નજર પડતાં ગાડી પાછી લેવડાવી, હાર મંગાવી ઠાકોરજીને ધરાવીને ભક્તનો ભાવ સ્વીકાર્યો.",
+        person: "રસ્તા પર ઊભેલા સામાન્ય હરિભક્ત",
+        guna: "સૂક્ષ્મ દ્રષ્ટિ અને ભક્તનો ભાવ પોષવો"
+      },
+      {
+        id: 20,
+        date: "વિચરણા સ્મૃતિ",
+        location: "સુરેન્દ્રનગરથી મહેસાણા રસ્તે",
+        story: "ગાડીના કાચ એવા હતા કે બહારથી હરિભક્તોને સ્વામીશ્રી દેખાતા ન હતા. ભક્તો જય સ્વામિનારાયણનો સારો પ્રતિભાવ ન આપી શક્યા તે જાણી સ્વામીશ્રીએ ગાડી જ બદલાવી નાખી.",
+        person: "રસ્તા પર ઊભેલા હરિભક્તો",
+        guna: "હરિભક્તોને દર્શનનો લાભ આપવાની ઉત્કટ ઈચ્છા"
+      },
+      {
+        id: 21,
+        date: "વિચરણા સ્મૃતિ",
+        location: "ધરમપુર / સુરત",
+        story: "રાકેશભાઈ ઝવેરીના આમંત્રણથી હેલિકોપ્ટરમાં ધરમપુર ગયા, હોલનું ઉદ્ઘાટન કર્યું, મંદિર, વોકેશનલ આઈટીઆઈ સેન્ટરના દરેક રૂમમાં ફરી આદિવાસી યુવાનોને પ્રોત્સાહિત કર્યા.",
+        person: "રાકેશભાઈ ઝવેરી અને આદિવાસી વિદ્યાર્થીઓ",
+        guna: "અથાક પરિશ્રમ અને બીજાને રાજી કરવાનો ગુણ"
+      },
+      {
+        id: 22,
+        date: "વિચરણા સ્મૃતિ",
+        location: "સારંગપુર",
+        story: "વિદાય સભામાં સુરેશભાઈ નામના (ગાંડા જેવા ગણાતા) ભક્તે 'વેલા પાછા આવજો' કહ્યું તો સ્વામીશ્રીએ તેમને મંચ પર પોતાની નજીક બોલાવીને અઢળક પ્રેમ દર્શાવ્યો.",
+        person: "સુરેશભાઈ (હરિભક્ત)",
+        guna: "નિર્દોષ ભક્ત પ્રત્યે પક્ષપાત રહિત પ્રેમ"
+      },
+      {
+        id: 23,
+        date: "વિચરણા સ્મૃતિ",
+        location: "જીયાવ-કાર્યાણી / ભાદરા",
+        story: "ભાદરામાં અત્યંત સાંકડી ગલીમાં બંને ખભા ઘસાય તેવી જગ્યામાંથી પસાર થઈને પણ એક હરિભક્તનું ટ્રેક્ટર પ્રસાદીનું કરવા પોતે ગયા. જોડીમાં પોતાનું આખું જીવન ભક્તો માટે અર્પણ કર્યું.",
+        person: "ટ્રેક્ટર વાળા હરિભક્ત / સત્સંગ સમાજ",
+        guna: "સર્વસ્વ સમર્પણ અને 'સાઇલેન્ટ લવ' (Silent Love)"
+      },
+      {
+        id: 24,
+        date: "વિચરણા સ્મૃતિ",
+        location: "સત્સંગ કેન્દ્ર",
+        story: "એક સેન્ટરમાં પરિવારના ભાઈઓ વચ્ચેના ઝઘડામાં સ્વામીશ્રીના કહેવાથી તેઓએ સંપ રાખ્યો. આ જાણીને સ્વામીશ્રીએ આરામમાંથી જાગીને તરત જ રાજીપો વ્યક્ત કરતો વિશેષ પત્ર લખ્યો.",
+        person: "સંપ રાખનાર પરિવારના ભાઈઓ",
+        guna: "સંપ અને એકતા પ્રત્યેનો પરમ રાજીપો"
+      },
+      {
+        id: 25,
+        date: "વિચરણા સ્મૃતિ",
+        location: "નિયમિત સેવા",
+        story: "સંતો-હરિભક્તોની હોમિયોપેથી સારવાર માટે પોતાની પાસે રાખેલી 'લાલ બુક'માંથી દવાઓ લખી આપે છે, દરેક પેજ નંબર યાદ રાખે છે અને દવા પહોંચી કે નહીં તેની રાત્રે પણ પૂછપરછ કરે છે.",
+        person: "બીમાર સંતો અને હરિભક્તો",
+        guna: "શારીરિક પીડા નિવારવાની કાળજી અને અદ્ભુત યાદશક્તિ"
+      }
+    ];
+
+    let currentFCIndex = 0;
+    let cardDeck = [...prasangData];
+
+    function renderGallery(items) {
+      const container = document.getElementById('galleryContainer');
+      container.innerHTML = '';
+      
+      document.getElementById('cardCountBadge').innerText = `કુલ ${items.length} પ્રસંગો દર્શાવેલ છે`;
+
+      if (items.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">કોઈ પ્રસંગ મળ્યો નથી.</div>`;
+        return;
+      }
+
+      items.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'prasang-card';
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <span class="pill-location">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                ${p.location}
+              </span>
+              <span class="pill-date">${p.date}</span>
+            </div>
+            <p class="card-story">${p.story}</p>
+          </div>
+          <div class="card-footer">
+            <div class="card-meta-row">
+              <span class="card-meta-label">સંકળાયેલ:</span>
+              <span class="card-meta-val">${p.person}</span>
+            </div>
+            <div class="card-meta-row">
+              <span class="card-meta-label">ગુણ / કાર્ય:</span>
+              <span class="card-meta-val guna">${p.guna}</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function handleSearch() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      if (!q) {
+        renderGallery(prasangData);
+        return;
+      }
+      const filtered = prasangData.filter(item => 
+        item.story.toLowerCase().includes(q) ||
+        item.location.toLowerCase().includes(q) ||
+        item.person.toLowerCase().includes(q) ||
+        item.guna.toLowerCase().includes(q)
+      );
+      renderGallery(filtered);
+    }
+
+    function switchView(mode) {
+      const gallerySec = document.getElementById('gallerySection');
+      const fcSec = document.getElementById('flashcardSection');
+      const gBtn = document.getElementById('tabGalleryBtn');
+      const fcBtn = document.getElementById('tabFlashcardBtn');
+
+      if (mode === 'gallery') {
+        gallerySec.style.display = 'block';
+        fcSec.classList.remove('active');
+        gBtn.classList.add('active');
+        fcBtn.classList.remove('active');
+      } else {
+        gallerySec.style.display = 'none';
+        fcSec.classList.add('active');
+        fcBtn.classList.add('active');
+        gBtn.classList.remove('active');
+        updateFlashcardView();
+      }
+    }
+
+    function updateFlashcardView() {
+      const card = cardDeck[currentFCIndex];
+      const cardInner = document.getElementById('fcCardInner');
+      
+      cardInner.classList.remove('flipped');
+
+      document.getElementById('fcCounter').innerText = `કાર્ડ ${currentFCIndex + 1} / ${cardDeck.length}`;
+      document.getElementById('fcProgressFill').style.width = `${((currentFCIndex + 1) / cardDeck.length) * 100}%`;
+      
+      document.getElementById('fcLocationPill').innerText = card.location;
+      document.getElementById('fcFrontStory').innerText = card.story;
+      document.getElementById('fcFrontDate').innerText = `તારીખ / સમયગાળો: ${card.date}`;
+
+      document.getElementById('fcBackGuna').innerText = card.guna;
+      document.getElementById('fcBackPerson').innerText = card.person;
+      document.getElementById('fcBackLoc').innerText = `સ્થળ: ${card.location}`;
+    }
+
+    function flipCard() {
+      document.getElementById('fcCardInner').classList.toggle('flipped');
+    }
+
+    function nextCard() {
+      currentFCIndex = (currentFCIndex + 1) % cardDeck.length;
+      updateFlashcardView();
+    }
+
+    function prevCard() {
+      currentFCIndex = (currentFCIndex - 1 + cardDeck.length) % cardDeck.length;
+      updateFlashcardView();
+    }
+
+    function shuffleCards() {
+      for (let i = cardDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cardDeck[i], cardDeck[j]] = [cardDeck[j], cardDeck[i]];
+      }
+      currentFCIndex = 0;
+      updateFlashcardView();
+    }
+
+    function downloadCurrentHtml() {
+      const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'mahant_swami_prasang_gallery.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGallery(prasangData);
+    });
+  </script>
+</body>
+</html>
