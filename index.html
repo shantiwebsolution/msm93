@@ -19,11 +19,7 @@
       --shadow-hover: 0 20px 30px -10px rgba(217, 83, 30, 0.22), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Shruti", "Gujarati Sangam MN", sans-serif;
@@ -34,7 +30,6 @@
       flex-direction: column;
     }
 
-    /* Hero Section */
     .hero {
       background: linear-gradient(145deg, #d9531e 0%, #a7350c 100%);
       color: #ffffff;
@@ -75,7 +70,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* Main Container */
     .container {
       max-width: 1000px;
       margin: -2.2rem auto 3.5rem;
@@ -105,7 +99,6 @@
       align-items: stretch;
     }
 
-    /* Day Card */
     .day-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -125,7 +118,6 @@
       border-color: rgba(217, 83, 30, 0.35);
     }
 
-    /* Card Image Thumbnail */
     .card-thumb-wrap {
       position: relative;
       width: 100%;
@@ -221,31 +213,6 @@
       transform: translateY(-1px);
     }
 
-    /* Placeholder Card for Day 2 */
-    .day-card.coming-soon {
-      border-style: dashed;
-      background: #fafafa;
-    }
-
-    .day-card.coming-soon:hover {
-      transform: none;
-      box-shadow: var(--shadow);
-      border-color: var(--border);
-    }
-
-    .coming-soon-btn {
-      background: #e2e8f0;
-      color: #94a3b8;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
-
-    .coming-soon-btn:hover {
-      background: #e2e8f0;
-      transform: none;
-    }
-
-    /* Footer */
     footer {
       text-align: center;
       padding: 2rem 1.5rem;
@@ -310,27 +277,35 @@
         </div>
       </div>
 
-      <!-- Placeholder Card for Day 2 -->
-      <div class="day-card coming-soon">
-        <div class="card-thumb-wrap" style="background: #f1f5f9; display: flex; align-items: center; justify-content: center;">
-          <span style="font-size: 2.5rem; opacity: 0.35;">📖</span>
+      <!-- Day 2 Card -->
+      <div class="day-card">
+        <div class="card-thumb-wrap">
+          <img 
+            src="https://img.youtube.com/vi/jFChZxdcn0k/maxresdefault.jpg" 
+            alt="Saintliness of a Pure Heart | The Decade"
+            onerror="this.src='https://img.youtube.com/vi/jFChZxdcn0k/hqdefault.jpg'"
+          />
+          <div class="card-thumb-overlay"></div>
         </div>
 
         <div class="card-content">
           <div>
             <div class="day-meta">
-              <span class="day-num" style="background: #e2e8f0; color: #64748b;">આગામી ભાગ</span>
-              <span class="day-count">ટૂંક સમયમાં</span>
+              <span class="day-num">દિવસ ૨ (Day 2)</span>
+              <span class="day-count">૧૫ પ્રસંગો</span>
             </div>
-            <h3 style="color: #64748b;">નૂતન પ્રસંગ સંગ્રહ</h3>
+            
+            <h3>Saintliness of a Pure Heart | The Decade</h3>
+
             <p class="day-desc">
-              આગામી દિવસના દિવ્ય પ્રસંગો અને ફ્લેશકાર્ડ્સનું સંકલન તૈયાર થયા બાદ અહીં ઉપલબ્ધ થશે.
+              ગુરુહરિ મહંત સ્વામી મહારાજની શુદ્ધ હૃદયની સાધુતા, પરાભક્તિ, અહંશૂન્યતા અને કરુણાભાવના પ્રેરક પ્રસંગો.
             </p>
           </div>
 
-          <button class="open-btn coming-soon-btn" disabled>
-            ટૂંક સમયમાં (Coming Soon)
-          </button>
+          <a href="day2.html" class="open-btn">
+            પ્રસંગો જુઓ (Open Day 2)
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+          </a>
         </div>
       </div>
     </div>

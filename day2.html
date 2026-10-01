@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saintliness of a Pure Heart | The Decade - દિવસ ૨</title>
+  <style>
+    :root {
+      --primary: #d9531e;
+      --primary-dark: #b83e10;
+      --primary-light: #fff3ec;
+      --gold: #f59e0b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-hover: 0 14px 28px -4px rgba(217, 83, 30, 0.15), 0 6px 10px -2px rgba(0,0,0,0.04);
+      --correct: #16a34a;
+      --correct-bg: #f0fdf4;
+      --incorrect: #dc2626;
+      --incorrect-bg: #fef2f2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Shruti", "Gujarati Sangam MN", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #d9531e 0%, #b83e10 100%);
+      color: #fff;
+      padding: 2.2rem 1.2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(217, 83, 30, 0.25);
+      position: relative;
+    }
+
+    .home-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      transition: background 0.2s;
+    }
+
+    .home-nav:hover { background: rgba(255, 255, 255, 0.3); }
+
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .tab-bar {
+      max-width: 1240px;
+      margin: 1.8rem auto 0;
+      padding: 0 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 11px 24px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(217, 83, 30, 0.25);
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 1.5rem auto;
+      padding: 0 1.2rem;
+    }
+
+    .controls {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 1rem 1.4rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 260px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(217, 83, 30, 0.15);
+    }
+
+    .stat-badge {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* GALLERY VIEW */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .prasang-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .prasang-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      border-color: rgba(217, 83, 30, 0.3);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.9rem;
+      gap: 8px;
+    }
+
+    .pill-location {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pill-date {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .card-story {
+      font-size: 1rem;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+      line-height: 1.65;
+    }
+
+    .card-footer {
+      border-top: 1px dashed var(--border);
+      padding-top: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 0.88rem;
+    }
+
+    .card-meta-row { display: flex; gap: 6px; }
+
+    .card-meta-label {
+      color: var(--text-muted);
+      font-weight: 600;
+      min-width: 95px;
+    }
+
+    .card-meta-val { color: #334155; font-weight: 500; }
+    .card-meta-val.guna { color: var(--primary-dark); font-weight: 700; }
+
+    /* FLASHCARD VIEW */
+    .flashcard-section {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .flashcard-section.active { display: flex; }
+
+    .fc-progress-wrap {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .fc-progress-bar {
+      height: 8px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .fc-progress-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 6.6%;
+      transition: width 0.3s ease;
+    }
+
+    .fc-perspective {
+      perspective: 1200px;
+      width: 100%;
+      height: 380px;
+      cursor: pointer;
+    }
+
+    .fc-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border-radius: 20px;
+    }
+
+    .fc-inner.flipped { transform: rotateY(180deg); }
+
+    .fc-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      padding: 2.2rem 2.2rem;
+      background: #ffffff;
+      border: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+
+    .fc-front { background: #ffffff; }
+
+    .fc-back {
+      background: #fffaf7;
+      border-color: rgba(217, 83, 30, 0.35);
+      transform: rotateY(180deg);
+    }
+
+    .fc-prompt-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .fc-click-hint { font-size: 0.8rem; color: var(--text-muted); font-weight: normal; }
+
+    .fc-story-text {
+      font-size: 1.18rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      margin: auto 0;
+      text-align: center;
+    }
+
+    .fc-back-detail { margin: auto 0; width: 100%; }
+
+    .fc-back-item {
+      margin-bottom: 1.2rem;
+      background: #ffffff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #fee2e2;
+    }
+
+    .fc-back-item:last-child { margin-bottom: 0; }
+    .fc-back-item h4 { font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+    .fc-back-item p { font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); }
+
+    .fc-controls {
+      display: flex;
+      gap: 16px;
+      margin-top: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .fc-btn {
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s;
+    }
+
+    .fc-btn:hover { background: #f8fafc; border-color: var(--primary); }
+    .fc-btn.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .fc-btn.primary:hover { background: var(--primary-dark); }
+
+    /* QUIZ SECTION */
+    .quiz-section {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .quiz-section.active { display: flex; }
+
+    .quiz-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.2rem;
+      box-shadow: var(--shadow);
+      width: 100%;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .quiz-meta-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 12px;
+      border-radius: 8px;
+    }
+
+    .quiz-score-badge { font-size: 0.95rem; font-weight: 700; color: #334155; }
+
+    .quiz-question-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--primary);
+      padding: 1.2rem 1.4rem;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 1.6rem;
+      font-size: 1.1rem;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .quiz-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.5rem; }
+
+    .option-btn {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .option-btn:hover:not(:disabled) { border-color: var(--primary); background: #fffbf9; transform: translateX(4px); }
+    .option-btn.selected-correct { background: var(--correct-bg); border-color: var(--correct); color: var(--correct); }
+    .option-btn.selected-incorrect { background: var(--incorrect-bg); border-color: var(--incorrect); color: var(--incorrect); }
+    .option-btn:disabled { cursor: default; }
+
+    .quiz-feedback {
+      display: none;
+      padding: 1.1rem 1.3rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .quiz-feedback.show-correct { display: block; background: var(--correct-bg); border: 1px solid #bbf7d0; color: #14532d; }
+    .quiz-feedback.show-incorrect { display: block; background: var(--incorrect-bg); border: 1px solid #fecaca; color: #7f1d1d; }
+
+    .quiz-next-btn {
+      display: none;
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .quiz-next-btn:hover { background: var(--primary-dark); }
+
+    .quiz-result-view { display: none; text-align: center; padding: 3rem 1.5rem; }
+    .quiz-result-view h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; }
+
+    .quiz-score-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      border: 4px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin: 1.5rem auto;
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .fc-perspective { height: 430px; }
+      .fc-story-text { font-size: 1.05rem; }
+      header h1 { font-size: 1.75rem; }
+      .fc-face { padding: 1.5rem; }
+      .quiz-card { padding: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="home-nav">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      મુખ્ય પૃષ્ઠ (Home)
+    </a>
+    <h1>Saintliness of a Pure Heart | The Decade</h1>
+  </header>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" id="tabGalleryBtn" onclick="switchView('gallery')">
+      🖼️ ગેલેરી વ્યુ (Gallery)
+    </button>
+    <button class="tab-btn" id="tabFlashcardBtn" onclick="switchView('flashcards')">
+      🎴 ફ્લેશકાર્ડ્સ (Flashcards)
+    </button>
+    <button class="tab-btn" id="tabQuizBtn" onclick="switchView('quiz')">
+      📝 સેલ્ફ ક્વિઝ (Self Quiz)
+    </button>
+  </div>
+
+  <main class="container">
+    <!-- 1. GALLERY SECTION -->
+    <section id="gallerySection">
+      <div class="controls">
+        <input type="text" id="searchInput" class="search-input" placeholder="પ્રસંગ, સ્થળ અથવા ગુણ શોધો..." oninput="handleSearch()">
+        <div class="stat-badge" id="cardCountBadge">કુલ ૧૫ પ્રસંગો દર્શાવેલ છે</div>
+      </div>
+      <div class="gallery-grid" id="galleryContainer"></div>
+    </section>
+
+    <!-- 2. FLASHCARD SECTION -->
+    <section id="flashcardSection" class="flashcard-section">
+      <div class="fc-progress-wrap">
+        <span id="fcCounter" style="font-weight: 700; color: var(--text-muted);">કાર્ડ 1 / 15</span>
+        <div class="fc-progress-bar">
+          <div class="fc-progress-fill" id="fcProgressFill"></div>
+        </div>
+      </div>
+
+      <div class="fc-perspective" onclick="flipCard()">
+        <div class="fc-inner" id="fcCardInner">
+          <div class="fc-face fc-front">
+            <div class="fc-prompt-tag">
+              <span id="fcLocationPill">સ્થળ</span>
+              <span class="fc-click-hint">ક્લિક કરીને ગુણ જાણો ↻</span>
+            </div>
+            <div class="fc-story-text" id="fcFrontStory">પ્રસંગ વિગતો લોડ થઈ રહી છે...</div>
+            <div style="text-align: center; color: var(--text-muted); font-size: 0.85rem;" id="fcFrontDate">તારીખ / વર્ષ</div>
+          </div>
+
+          <div class="fc-face fc-back">
+            <div class="fc-prompt-tag">
+              <span>જવાબ અને ગુણ દર્શન</span>
+              <span class="fc-click-hint">પાછા ફરવા ક્લિક કરો ↺</span>
+            </div>
+            <div class="fc-back-detail">
+              <div class="fc-back-item">
+                <h4>સ્વામીશ્રીનો ગુણ અથવા કાર્ય</h4>
+                <p id="fcBackGuna">ગુણ</p>
+              </div>
+              <div class="fc-back-item">
+                <h4>સંકળાયેલ વ્યક્તિ અથવા હરિભક્ત</h4>
+                <p id="fcBackPerson" style="color: #475569; font-size: 1rem;">સંકળાયેલ</p>
+              </div>
+            </div>
+            <div style="text-align: right; color: var(--primary); font-size: 0.82rem; font-weight: 600;" id="fcBackLoc">સ્થળ</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fc-controls">
+        <button class="fc-btn" onclick="prevCard()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          પાછળ (Previous)
+        </button>
+        <button class="fc-btn" onclick="flipCard()">ઉલટાવો (Flip Card)</button>
+        <button class="fc-btn primary" onclick="nextCard()">
+          આગળ (Next)
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <button class="fc-btn" onclick="shuffleCards()" title="રેન્ડમ ક્રમ">🎲 શફલ (Shuffle)</button>
+      </div>
+    </section>
+
+    <!-- 3. SELF QUIZ SECTION -->
+    <section id="quizSection" class="quiz-section">
+      <div class="quiz-card" id="quizActiveCard">
+        <div class="quiz-header">
+          <span class="quiz-meta-tag" id="quizProgressTag">પ્રશ્ન 1 / 10</span>
+          <span class="quiz-score-badge" id="quizScoreTag">સ્કોર: 0</span>
+        </div>
+
+        <div class="quiz-question-box" id="quizQuestionText">પ્રશ્ન લોડ થઈ રહ્યો છે...</div>
+        <div class="quiz-options" id="quizOptionsContainer"></div>
+        <div class="quiz-feedback" id="quizFeedbackBox"></div>
+
+        <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuizQuestion()">
+          આગળનો પ્રશ્ન (Next Question) →
+        </button>
+      </div>
+
+      <div class="quiz-card quiz-result-view" id="quizResultView">
+        <h2>🎉 અભિનંદન! ક્વિઝ પૂર્ણ થઈ</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">તમારું સ્વ-મૂલ્યાંકન પરિણામ:</p>
+        <div class="quiz-score-circle" id="quizFinalScore">0/10</div>
+        <p id="quizFinalRemark" style="font-size: 1.15rem; font-weight: 700; color: #1e293b; margin-bottom: 2rem;"></p>
+        <button class="fc-btn primary" onclick="initQuiz()">🔄 ફરીથી ક્વિઝ આપો (Restart Quiz)</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const prasangData = [
+      {
+        id: 1,
+        date: "1975-1976",
+        location: "શહેરા",
+        story: "હિંમતસિંહભાઈ સોલંકીના ઘરે લાકડાની ખુરશીમાં સ્વામીશ્રીની આંગળી દબાઈ જતાં ભારે રક્તસ્ત્રાવ અને અસહ્ય પીડા થઈ. આખી રાત ઊંઘ ન આવી છતાં વિચરણ અટકાવ્યા વગર ભક્તોને સુખ આપ્યું.",
+        person: "હિંમતસિંહ સોલંકી / શ્રુતિપ્રિયદાસ સ્વામી",
+        guna: "ત્રિગુણાતીત દેહભાવથી પર વર્તન, તિતિક્ષા"
+      },
+      {
+        id: 2,
+        date: "૮૭ વર્ષની વયે",
+        location: "હોસ્પિટલ",
+        story: "પ્રોસ્ટેટની સર્જરી વખતે ડો. મહેશભાઈએ સ્વામીશ્રીના મુખારવિંદ પર જોયું તો અદ્ભુત શાંતિ અને તેજ હતું. સર્જરીની પીડામાં પણ ગીતાના સ્થિતપ્રજ્ઞ પુરુષની જેમ દેહાતીત રહ્યા.",
+        person: "ડો. મહેશભાઈ",
+        guna: "સ્થિતપ્રજ્ઞતા, દેહાતીત અવસ્થા"
+      },
+      {
+        id: 3,
+        date: "૧૯૯૭",
+        location: "અમેરિકા-લંડન-ઓસ્ટ્રેલિયા-ન્યૂઝીલેન્ડ",
+        story: "જન્માષ્ટમીનો નિર્જળ ઉપવાસ હતો છતાં સતત વિમાન મુસાફરી કરી. ૩ દિવસમાં ૫ દેશો ખેડી કાઢ્યા, પગમાં સોજા એટલા ચડ્યા કે ચંપલ ન નીકળે છતાં અવિરત વિચરણ કર્યું.",
+        person: "આદર્શજીવનદાસ સ્વામી",
+        guna: "તનુ ત્યાગી, અથાક ભક્તકલ્યાણ વિચરણ"
+      },
+      {
+        id: 4,
+        date: "વિચરણા સ્મૃતિ",
+        location: "ગોંડલ / જામનગર",
+        story: "પૂજામાં સત્સંગ દીક્ષા મુખપાઠ રજૂ કરતા બે પ્રજ્ઞાચક્ષુ બાળકોને જોઈ દ્રવી ગયા. જામનગરના આઈ સ્પેશિયાલિસ્ટ ડોક્ટર પાસે વિશેષ ચશ્મા તૈયાર કરાવી જન્મદિવસ પર બાળકોને ભેટ આપ્યા.",
+        person: "બે પ્રજ્ઞાચક્ષુ બાળકો / ઉત્તમયોગીદાસ સ્વામી",
+        guna: "બીજાના દુઃખે દુઃખી, પરમ કરુણા અને વાત્સલ્ય"
+      },
+      {
+        id: 5,
+        date: "વિચરણા સ્મૃતિ",
+        location: "જામનગર",
+        story: "બપોરે આરામમાંથી જાગીને સીધા ખુરશીમાં બેઠા અને હોમિયોપેથીની લાલ બુકમાંથી ૧ કલાક અને ૨૩ મિનિટ સુધી એકાગ્રચિત્તે બીમાર હરિભક્ત માટે દવાઓનું અધ્યયન કર્યું.",
+        person: "બીમાર હરિભક્ત / સેવક સંતો",
+        guna: "હરિભક્તોની પીડા નિવારવાનો અખંડ ભાવ"
+      },
+      {
+        id: 6,
+        date: "૨૦૨૧",
+        location: "નેનપુર",
+        story: "તૌકતે વાવાઝોડામાં માળામાંથી નીચે પડી ગયેલા પક્ષીના નાના બચ્ચાને હાથમાં લઈ વહાલથી હાથ ફેરવ્યો અને બારીમાં કાબર માટે દાણા-પાણીની કાળજી રાખી.",
+        person: "બ્રહ્મનયન સ્વામી / પક્ષી-બચ્ચું",
+        guna: "નિર્દોષ જીવો અને પશુ-પક્ષીઓ પ્રત્યે અપાર અનુકંપા"
+      },
+      {
+        id: 7,
+        date: "૨૦૧૯",
+        location: "સારંગપુર",
+        story: "ખીજડા (શમી વૃક્ષ)ની પ્રદક્ષિણા દરમિયાન રસ્તામાં કીડી-મકોડાની હાર જોઈ સ્વામીશ્રી ઊભા રહી ગયા અને જીવજંતુ આગળ નીકળી જાય પછી જ કૂદીને આગળ ડગલું ભર્યું.",
+        person: "વેદનયનદાસ સ્વામી",
+        guna: "અહિંસા અને સૂક્ષ્મ જીવદયા"
+      },
+      {
+        id: 8,
+        date: "૨૦૧૭",
+        location: "ગઢડા",
+        story: "યજ્ઞપુરુષ દ્વારના ઉદ્ઘાટને તત્કાલીન મુખ્યમંત્રી વિજયભાઈ રૂપાણી આવવાના હતા. સ્વામીશ્રીએ જોયું કે ઠાકોરજી પર તડકો આવે છે, તો પોતે છાયો બનીને ત્યાં ઊભા રહી ગયા.",
+        person: "મુખ્યમંત્રી વિજયભાઈ રૂપાણી / ઠાકોરજી",
+        guna: "પરાભક્તિ, ઠાકોરજીની સૂક્ષ્મ સેવા-ભાવના"
+      },
+      {
+        id: 9,
+        date: "૨૦૧૮",
+        location: "સારંગપુર",
+        story: "ભુજથી પધાર્યા ત્યારે સ્વાગત આરતીમાં ઠાકોરજીને બાજુમાં મૂકાયા તે સ્વામીશ્રીથી સહન ન થયું. જ્યાં સુધી ઠાકોરજીને ખોળામાં ન લીધા ત્યાં સુધી સ્વાગત સ્વીકાર્યું નહીં.",
+        person: "સંતચરિતદાસ સ્વામી",
+        guna: "ભક્તિનું ઉત્કટ ઝરણું, ઈષ્ટદેવ પ્રધાન ભાવ"
+      },
+      {
+        id: 10,
+        date: "જન્માષ્ટમી પર્વ",
+        location: "બોચાસણ-ચાણસદ-અટલાદરા",
+        story: "૮૩ વર્ષની ઉંમરે નિર્જળ ઉપવાસ હોવા છતાં મંગળા આરતી, શણગાર આરતી, દેરીઓ અને પ્રાસાદિક સ્થાનોએ કુલ ૭૧ સાષ્ટાંગ દંડવત પ્રણામ અહોભાવથી કર્યા.",
+        person: "મંદિરો અને ઠાકોરજી",
+        guna: "અખંડ દાસભાવ અને પરાભક્તિના દંડવત"
+      },
+      {
+        id: 11,
+        date: "૨૦૧૯",
+        location: "અટલાદરા",
+        story: "બાળસભામાં સહજાનંદ નામાવલી બોલનાર નાનકડા બાળક નીલ પઢિયાર સભામાં આવ્યો ત્યારે સ્વામીશ્રીએ સામેથી તેના ચરણસ્પર્શ કરી લીધા.",
+        person: "બાળક નીલ પઢિયાર / જ્ઞાનનયનદાસ સ્વામી",
+        guna: "હરિજન હરિ સમ જાણે છે, નિરાભિમાનતા"
+      },
+      {
+        id: 12,
+        date: "૨૦૧૭",
+        location: "રોબિન્સવિલ",
+        story: "અક્ષરધામના સ્તંભ પૂજનમાં પરમહંસના વેશમાં ઊભેલા બાળકો આગળ સ્વામીશ્રી ગયા અને 'આ તો પરમહંસો છે' કહીને બાળકના ચરણસ્પર્શ કર્યા.",
+        person: "પરમહંસ બનેલા બાળકો / કેશવચિંતનદાસ સ્વામી",
+        guna: "બાળકોમાં બ્રહ્મસ્વરૂપ દર્શન અને નમ્રતા"
+      },
+      {
+        id: 13,
+        date: "૧૮ ઓગસ્ટ ૨૦૧૬",
+        location: "સારંગપુર",
+        story: "ગુરુપદે આવ્યા બાદની પ્રથમ સભામાં વિવેકસાગર સ્વામી કથા કરતા હતા ત્યારે સ્વામીશ્રી જૂના રૂટિન મુજબ સામાન્ય સોફા પર બેસવા ગયા.",
+        person: "પૂ. વિવેકસાગર સ્વામી",
+        guna: "ગુરુ ભાવનો લેશમાત્ર અહંકાર નહીં, સહજ દાસત્વ"
+      },
+      {
+        id: 14,
+        date: "૨૦૧૮",
+        location: "હૈદરાબાદ (મુચિંતલ)",
+        story: "ચિન્ના જીયર સ્વામીના આમંત્રણથી સ્ટેચ્યુ ઓફ ઈક્વાલિટી ખાતે રામાનુજાચાર્યની ૨૧૬ ફૂટ ઊંચી મૂર્તિ સુધી દાદરા ચડીને પુષ્પાંજલિ અર્પણ કરી.",
+        person: "શ્રી ચિન્ના જીયર સ્વામી",
+        guna: "સાધી સૌ સાથે સંવાદિતા, સર્વસંપ્રદાય આદર"
+      },
+      {
+        id: 15,
+        date: "૨૦૨૩",
+        location: "રોબિન્સવિલ અક્ષરધામ",
+        story: "૧૨,૫૦૦ સ્વયંસેવકોને સમર્પિત 'Thank You' કાર્ડ બનાવવા સ્વામીશ્રીએ ૯૦ મિનિટ આપી અને પોતાના હાથે માળા પરોવીને સ્વયંસેવકોને હાર અર્પણ કર્યો.",
+        person: "અક્ષરધામ સ્વયંસેવકો / ગુરુમયદાસ સ્વામી",
+        guna: "કાર્યકર્તાઓ પ્રત્યે અસીમ કૃતજ્ઞતા અને પૂજ્યભાવ"
+      }
+    ];
+
+    function renderGallery(items) {
+      const container = document.getElementById('galleryContainer');
+      container.innerHTML = '';
+      document.getElementById('cardCountBadge').innerText = `કુલ ${items.length} પ્રસંગો દર્શાવેલ છે`;
+
+      if (items.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">કોઈ પ્રસંગ મળ્યો નથી.</div>`;
+        return;
+      }
+
+      items.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'prasang-card';
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <span class="pill-location">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                ${p.location}
+              </span>
+              <span class="pill-date">${p.date}</span>
+            </div>
+            <p class="card-story">${p.story}</p>
+          </div>
+          <div class="card-footer">
+            <div class="card-meta-row">
+              <span class="card-meta-label">સંકળાયેલ:</span>
+              <span class="card-meta-val">${p.person}</span>
+            </div>
+            <div class="card-meta-row">
+              <span class="card-meta-label">ગુણ / કાર્ય:</span>
+              <span class="card-meta-val guna">${p.guna}</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function handleSearch() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      if (!q) {
+        renderGallery(prasangData);
+        return;
+      }
+      const filtered = prasangData.filter(item => 
+        item.story.toLowerCase().includes(q) ||
+        item.location.toLowerCase().includes(q) ||
+        item.person.toLowerCase().includes(q) ||
+        item.guna.toLowerCase().includes(q)
+      );
+      renderGallery(filtered);
+    }
+
+    let currentFCIndex = 0;
+    let cardDeck = [...prasangData];
+
+    function updateFlashcardView() {
+      const card = cardDeck[currentFCIndex];
+      const cardInner = document.getElementById('fcCardInner');
+      cardInner.classList.remove('flipped');
+
+      document.getElementById('fcCounter').innerText = `કાર્ડ ${currentFCIndex + 1} / ${cardDeck.length}`;
+      document.getElementById('fcProgressFill').style.width = `${((currentFCIndex + 1) / cardDeck.length) * 100}%`;
+      
+      document.getElementById('fcLocationPill').innerText = card.location;
+      document.getElementById('fcFrontStory').innerText = card.story;
+      document.getElementById('fcFrontDate').innerText = `તારીખ / સમયગાળો: ${card.date}`;
+
+      document.getElementById('fcBackGuna').innerText = card.guna;
+      document.getElementById('fcBackPerson').innerText = card.person;
+      document.getElementById('fcBackLoc').innerText = `સ્થળ: ${card.location}`;
+    }
+
+    function flipCard() {
+      document.getElementById('fcCardInner').classList.toggle('flipped');
+    }
+
+    function nextCard() {
+      currentFCIndex = (currentFCIndex + 1) % cardDeck.length;
+      updateFlashcardView();
+    }
+
+    function prevCard() {
+      currentFCIndex = (currentFCIndex - 1 + cardDeck.length) % cardDeck.length;
+      updateFlashcardView();
+    }
+
+    function shuffleCards() {
+      for (let i = cardDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cardDeck[i], cardDeck[j]] = [cardDeck[j], cardDeck[i]];
+      }
+      currentFCIndex = 0;
+      updateFlashcardView();
+    }
+
+    let quizQuestions = [];
+    let currentQIndex = 0;
+    let quizScore = 0;
+
+    function buildQuizPool() {
+      const shuffled = [...prasangData].sort(() => 0.5 - Math.random()).slice(0, 10);
+      quizQuestions = shuffled.map((item) => {
+        const type = Math.random() > 0.4 ? 'guna' : 'location';
+        let questionText = "";
+        let correctAnswer = "";
+        let otherPool = [];
+
+        if (type === 'guna') {
+          questionText = `આ પ્રસંગમાં સ્વામીશ્રીનો કયો દિવ્ય ગુણ પ્રગટ થાય છે?<br><span style="font-weight: normal; color: #475569; display:block; margin-top:8px;">"${item.story}"</span>`;
+          correctAnswer = item.guna;
+          otherPool = prasangData.map(p => p.guna).filter(g => g !== correctAnswer);
+        } else {
+          questionText = `નીચેનો પ્રસંગ કયા સ્થળે / સંદર્ભમાં બન્યો હતો?<br><span style="font-weight: normal; color: #475569; display:block; margin-top:8px;">"${item.story}"</span>`;
+          correctAnswer = item.location;
+          otherPool = prasangData.map(p => p.location).filter(l => l !== correctAnswer);
+        }
+
+        const distractors = [...new Set(otherPool)].sort(() => 0.5 - Math.random()).slice(0, 3);
+        const options = [...distractors, correctAnswer].sort(() => 0.5 - Math.random());
+
+        return {
+          question: questionText,
+          correct: correctAnswer,
+          options: options,
+          explanation: `વિગત: સ્થળ: ${item.location} | ગુણ: ${item.guna} | સંકળાયેલ: ${item.person}`
+        };
+      });
+    }
+
+    function initQuiz() {
+      buildQuizPool();
+      currentQIndex = 0;
+      quizScore = 0;
+      document.getElementById('quizActiveCard').style.display = 'block';
+      document.getElementById('quizResultView').style.display = 'none';
+      renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+      const q = quizQuestions[currentQIndex];
+      document.getElementById('quizProgressTag').innerText = `પ્રશ્ન ${currentQIndex + 1} / ${quizQuestions.length}`;
+      document.getElementById('quizScoreTag').innerText = `સ્કોર: ${quizScore}`;
+      document.getElementById('quizQuestionText').innerHTML = q.question;
+
+      const optContainer = document.getElementById('quizOptionsContainer');
+      optContainer.innerHTML = '';
+
+      const feedbackBox = document.getElementById('quizFeedbackBox');
+      feedbackBox.className = 'quiz-feedback';
+      feedbackBox.style.display = 'none';
+
+      const nextBtn = document.getElementById('quizNextBtn');
+      nextBtn.style.display = 'none';
+
+      q.options.forEach((optText, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span>${index + 1}. ${optText}</span>`;
+        btn.onclick = () => selectOption(btn, optText, q);
+        optContainer.appendChild(btn);
+      });
+    }
+
+    function selectOption(button, selectedText, questionObj) {
+      const allButtons = document.querySelectorAll('.option-btn');
+      allButtons.forEach(b => b.disabled = true);
+
+      const feedbackBox = document.getElementById('quizFeedbackBox');
+      const isCorrect = selectedText === questionObj.correct;
+
+      if (isCorrect) {
+        button.classList.add('selected-correct');
+        quizScore++;
+        document.getElementById('quizScoreTag').innerText = `સ્કોર: ${quizScore}`;
+        feedbackBox.className = 'quiz-feedback show-correct';
+        feedbackBox.innerHTML = `<strong>✓ સાચો જવાબ!</strong><br>${questionObj.explanation}`;
+      } else {
+        button.classList.add('selected-incorrect');
+        allButtons.forEach(b => {
+          if (b.innerText.includes(questionObj.correct)) {
+            b.classList.add('selected-correct');
+          }
+        });
+        feedbackBox.className = 'quiz-feedback show-incorrect';
+        feedbackBox.innerHTML = `<strong>✗ ખોટો જવાબ!</strong> સાચો જવાબ: <strong>${questionObj.correct}</strong><br>${questionObj.explanation}`;
+      }
+      document.getElementById('quizNextBtn').style.display = 'block';
+    }
+
+    function nextQuizQuestion() {
+      currentQIndex++;
+      if (currentQIndex < quizQuestions.length) {
+        renderQuizQuestion();
+      } else {
+        showQuizResults();
+      }
+    }
+
+    function showQuizResults() {
+      document.getElementById('quizActiveCard').style.display = 'none';
+      const resultView = document.getElementById('quizResultView');
+      resultView.style.display = 'block';
+
+      document.getElementById('quizFinalScore').innerText = `${quizScore} / ${quizQuestions.length}`;
+      let remark = "સરસ પ્રયત્ન! ફરીથી ફ્લેશકાર્ડ્સ જોઈને રિવિઝન કરો.";
+      if (quizScore >= 9) {
+        remark = "અદ્ભુત સ્મૃતિ અને પરિપૂર્ણ તૈયારી! સર્વોચ્ચ પરિણામ.";
+      } else if (quizScore >= 7) {
+        remark = "ખૂબ સરસ! તમારો સત્સંગ અને પ્રસંગોનો અભ્યાસ ઉત્કૃષ્ટ છે.";
+      }
+      document.getElementById('quizFinalRemark').innerText = remark;
+    }
+
+    function switchView(mode) {
+      const gallerySec = document.getElementById('gallerySection');
+      const fcSec = document.getElementById('flashcardSection');
+      const quizSec = document.getElementById('quizSection');
+
+      const gBtn = document.getElementById('tabGalleryBtn');
+      const fcBtn = document.getElementById('tabFlashcardBtn');
+      const qBtn = document.getElementById('tabQuizBtn');
+
+      gallerySec.style.display = 'none';
+      fcSec.classList.remove('active');
+      quizSec.classList.remove('active');
+
+      gBtn.classList.remove('active');
+      fcBtn.classList.remove('active');
+      qBtn.classList.remove('active');
+
+      if (mode === 'gallery') {
+        gallerySec.style.display = 'block';
+        gBtn.classList.add('active');
+      } else if (mode === 'flashcards') {
+        fcSec.classList.add('active');
+        fcBtn.classList.add('active');
+        updateFlashcardView();
+      } else if (mode === 'quiz') {
+        quizSec.classList.add('active');
+        qBtn.classList.add('active');
+        initQuiz();
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGallery(prasangData);
+    });
+  </script>
+</body>
+</html>
